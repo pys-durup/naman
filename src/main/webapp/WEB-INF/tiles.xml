@@ -12,11 +12,38 @@
 		board.view
 		member.auth
 	 -->
+	 
+	 <!-- 조혜승 -->
 	<definition name="rest.*" template="/WEB-INF/views/layout/main.jsp">
 		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
 		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/rest/{1}.jsp"></put-attribute>
 		
+	</definition>
+	
+	<!-- 윤지봉  -->
+	<definition name="main.*" template="/WEB-INF/views/layout/index.jsp">
+		<!-- 조각 페이지 등록 -->
+		<put-attribute name="asset_yjb" value="/WEB-INF/views/inc/asset_yjb.jsp"></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/views/main/header{1}.jsp"></put-attribute>
+		<put-attribute name="search" value="/WEB-INF/views/main/search.jsp"></put-attribute>
+		<put-attribute name="ad" value="/WEB-INF/views/main/ad.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="mypage.*" template="/WEB-INF/views/layout/mypage.jsp">
+		<!-- 조각 페이지 등록 -->
+		<put-attribute name="asset_yjb" value="/WEB-INF/views/inc/asset_yjb.jsp"></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/views/main/headerLogin.jsp"></put-attribute>
+		<put-attribute name="side" value="/WEB-INF/views/myPage/side.jsp"></put-attribute>
+		<put-attribute name="top" value="/WEB-INF/views/myPage/top.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/myPage/content_{1}.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="free.*" template="/WEB-INF/views/layout/freeBoard.jsp">
+		<!-- 조각 페이지 등록 -->
+		<put-attribute name="asset_yjb" value="/WEB-INF/views/inc/asset_yjb.jsp"></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/views/main/headerLogin.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/freeBoard/{1}.jsp" ></put-attribute>		
 	</definition>
 	
 

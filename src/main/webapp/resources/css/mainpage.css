@@ -1,0 +1,329 @@
+		@font-face {
+		    font-family: 'InfinitySans-RegularA1';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		
+		html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		    margin: 0;
+		    padding: 0;
+		    border: 0;
+		}
+		
+		body, p, div, span, ul, li, dl, dt, dd, table, th, td, a, blockquote, input, textarea, fieldset, h1, h2, h3, h4, h5, h6, small, strong, b, i, em {
+		    font-family: 'InfinitySans-RegularA1';
+		}
+		
+		
+		.box {
+		    width: 120px;
+		    height: 190px;
+		    position: absolute;
+		    left: 0px;
+		    top: 0px;
+		    background-color: #eee;
+		    
+		}
+		
+		.box a {
+		    display: block;
+		    height: 35px;
+		    margin-left: 20px;
+		    font-size : 1.1em;
+		    color: #999;
+		}
+		
+		.box a:hover {
+		    text-decoration: none;
+		    color: #23527c;
+		}
+		
+		
+		#logo{
+		            
+		    color:  #5f8f17;
+		    font-weight: bold;
+		    margin-right: -20px;
+		    font-size: 1.5em;
+		}
+		
+		#logo:hover {
+		    cursor: pointer;
+		}
+		#headerContainer{
+		    width: 100%;
+		    height: 50px;
+		    line-height: 50px;
+		    margin: 5px auto;
+		    position:fixed;
+		    left: 0px;
+		    top: 0px;
+		    z-index: 5;
+		}
+		
+		
+		#nav .menuLink {
+		    /* color: black; */
+		    cursor: pointer;
+		    text-decoration: none;
+		    font-size: 18px;
+		
+		    color: cornsilk;
+		}
+		
+		
+		#nav .menuLink:hover {
+		    /* color: black; */
+		    padding-bottom: 13px ;
+		    border-bottom: 5px solid cornsilk;
+		}
+		
+		#nav .link2 {
+		    /* color: black; */
+		    padding: 5px 5px ;
+		    margin-left : -15px;
+		}
+		
+		
+		#nav .link3 {
+		    /* color: black; */
+		    padding: 5px 5px ;
+		    margin-left : -15px;
+		    font-size: 2em;
+		    color : white;
+		    
+		}
+		#nav .link3:hover {
+		    border-bottom: 0px solid cornsilk;
+		    
+		}
+		
+		#nav li:nth-child(6) {
+		    margin-left : 60px;
+		
+		}
+		
+		
+		#nav{
+		    width: 100%;
+		    background-color: #BED297;
+		    /* background-color: #2B2D2E; */
+		    margin: 0px auto;
+		}
+		
+		#nav ul{
+		    width: 1400px;
+		    margin: -5px auto;
+		    padding-top : 15px;
+		    /* border : 1px solid black; */
+		}
+		
+		#nav li{
+		    margin-left: 40px;
+		    float: left;
+		    list-style: none;
+		    
+		}
+		
+		
+		#nav .bservice{
+		    padding:10px 15px;
+		    border:1px solid #EEEEEE;
+		    border-radius: 30px;
+		    margin-right : -10px;
+		} 
+		
+		#nav ul li:nth-child(2){
+		    margin-left : 600px;
+		
+		}
+
+        #outline {
+            width : 1000px;
+            height: 200px;
+            margin : 100px auto;
+            border-radius: 30px;
+            background-color: #F8F7F9;
+            box-shadow: 5px 3px 6px 0px rgba(0,0,0,.3), -5px 3px 6px 0px rgba(0,0,0,.3);
+           /*  position : relative;
+            left: 0px;
+            top : 0px; */
+        }
+
+        #searchbar {
+            width : 850px;
+            height: 50px;
+            float:left;
+            border-radius: 8px;
+            border : 1px solid #ccc;
+            background-color : white;
+            margin : 30px 70px;
+        }
+        #searchbar input {
+            width: 550px;
+            height: 35px;
+            outline: none;
+            font-size : 1.3em;
+            padding-left : 5px;
+            border : 0px;
+            padding-top: 12px;
+            margin-left : 15px;
+            color : #444;
+            
+        }
+        
+        .innersearch:hover {
+        
+        	cursor: pointer;
+        	background-color: #eee;
+        	
+        }
+
+        .fas {
+            font-size : 1.3em;
+            margin-left : 20px;
+            display: inline-block;
+        }
+
+        #searchDates input:last-child {
+            margin-left : 10px;
+        }
+
+        #searchDates {
+            width : 600px;
+            height: 65px;
+            float:left;
+            margin: 5px 80px;
+        }
+
+        #searchDates .cal {
+            width : 250px;
+            height: 45px;
+            font-size : 1.3em;
+            padding-left : 5px;
+            color : #888;
+            border : 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        #searchDates .cal:hover {
+            cursor: pointer;
+        }
+
+        #person {
+            width : 150px;
+            height: 90px;
+            float:left;
+            margin-top : 5px;
+        }
+
+        #person select {
+            width : 150px;
+            height: 45px;
+            font-size : 1.2em;
+            padding-left: 10px;
+            border : 1px solid #ccc;
+            border-radius: 8px;
+            color : #888;
+
+            /* text-align: right;             */
+        }
+
+        #person select:hover {
+            cursor: pointer;
+        }
+
+        
+        #find {
+            width: 200px;
+            margin : -40px auto;
+        }
+
+        #find input {
+            width : 200px;
+            height: 80px;
+            background-color: cornflowerblue;
+            border : 0px;
+            border-radius: 10px;
+            color: white;
+            font-size : 1.5em;
+        }
+
+        #find input:hover {
+            cursor: pointer;
+        }
+        
+        #adone {
+            width : 1500px;
+            height: 300px;
+            /* border : 1px solid black; */
+            margin: -20px auto;
+        }
+
+        #adtitle {
+            font-size : 2em;
+            width : 300px;
+            /* border : 1px solid black; */
+            /* text-align: center; */
+            margin : 30px auto;
+        }
+
+        #adone .citys {
+            border-radius: 50%;
+            width : 180px;
+            height: 180px;
+            /* background-color: black; */
+            float: left;
+            margin-right : 32px;
+        }
+
+        #adone .cityname {
+            margin-top : 210px;
+            margin-left :65px;
+            font-size : 1.2em;
+        }
+
+        #adone div:nth-child(2) {
+            background-image: url("/naman/pics/001.png");
+        }
+        #adone div:nth-child(3) {
+            background-image: url("/naman/pics/002.png");
+        }
+        #adone div:nth-child(4) {
+            background-image: url("/naman/pics/003.png");
+        }
+        #adone div:nth-child(5) {
+            background-image: url("/naman/pics/004.png");
+        }
+        #adone div:nth-child(6) {
+            background-image: url("/naman/pics/005.png");
+        }
+        #adone div:nth-child(7) {
+            background-image: url("/naman/pics/006.png");
+        }
+        #adone div:nth-child(8) {
+            background-image: url("/naman/pics/007.png");
+        }
+
+        #adone div:hover {
+            cursor: pointer;
+        }
+
+		
+		/* #searachbox {
+			border-radius: 5px; 
+			width : 200px; 
+			height: 0px; 
+			background-color: #eee; 
+			font-size: 1.2em; 
+			color: #777; 
+			position: relative; 
+			left : 50px; 
+			top: 10px;"
+			padding-left : 80px;
+		} */
+
+
+
+
