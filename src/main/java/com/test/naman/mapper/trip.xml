@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+	test.xml(Mapper File)
+	- SQL 관리 파일
+-->
+<mapper namespace="main">
+
+	<select id="get" parameterType="String" resultType="sdto">
+		select * from vwfindallcity where region like #{searchtext}||'%' or name like #{searchtext}||'%'
+	</select>
+		
+	<select id="list" resultType="bdto">
+		select bf.*, (select name from tblcustomer c where c.customerseq = bf.customerseq) as name from tblBoardFree bf order by freeseq
+	</select>
+	
+	<select id="view" parameterType="String" resultType="bdto">
+		select bf.*, (select name from tblcustomer c where c.customerseq = bf.customerseq) as name from tblBoardFree bf where freeseq = #{freeSeq}
+	</select>
+	
+	<insert id="add" parameterType="bdto">
+		INSERT INTO tblBoardFree (freeSeq, customerSeq, title, content, regdate) values( freeSeq.nextVal, #{customerSeq}, #{title}, #{content}, sysdate)
+	</insert>
+	
+	<update id="edit">
+		update tblBoardFree set 
+			title = #{title}, 
+			content = #{content}, 
+			regdate = sysdate 
+				where freeSeq = #{freeSeq}
+	</update>
+	
+	<delete id="del" parameterType="String">
+		delete from tblBoardFree where freeSeq = #{freeSeq}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+

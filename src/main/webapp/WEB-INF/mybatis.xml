@@ -4,7 +4,12 @@
 
 <configuration>
  	<typeAliases>
+ 		<!-- 조혜승 -->
 		<typeAlias type="com.test.naman.rest.ReservationHotelDTO" alias="dto"/>
+		
+		<!-- 윤지봉 -->
+		<typeAlias type="com.test.naman.SearchHotelDTO" alias="sdto"/>
+		<typeAlias type="com.test.naman.free.BoardDTO" alias="bdto"/>
 	</typeAliases>
 	
 </configuration>
