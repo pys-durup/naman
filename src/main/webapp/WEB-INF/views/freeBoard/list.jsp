@@ -7,10 +7,10 @@
     	margin: 0px auto; "> 
 <div id="boardTop">
         <div class="boardTitle">자유게시판</div>
-        <div class="boardTitle">맛집게시판</div>
-        <div class="boardTitle">경로게시판</div>
-        <div class="boardTitle">어떤게시판</div>
-        <div class="boardTitle">무슨게시판</div>
+        <div class="boardTitle">맛집추천게시판</div>
+        <div class="boardTitle">여행일정게시판</div>
+        <div class="boardTitle">숙소추천게시판</div>
+        <div class="boardTitle">동행찾기게시판</div>
     </div>
     <div style="clear:both;"></div>
     <div id="justline"></div>

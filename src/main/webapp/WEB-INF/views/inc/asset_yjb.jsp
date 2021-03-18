@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <link rel="stylesheet" href="/naman/resources/css/bootstrap.css">
-<link rel="stylesheet" href="/naman/resources/css/main.css?after">
+<link rel="stylesheet" href="/naman/resources/css/mainpage.css?after">
 <script src="/naman/resources/js/jquery-1.12.4.js"></script>
 <script src="/naman/resources/js/bootstrap.js"></script>
 

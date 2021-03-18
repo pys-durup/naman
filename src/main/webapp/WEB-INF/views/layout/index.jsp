@@ -10,8 +10,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link rel="stylesheet" href="/naman/resources/css/mainpage.css">
-
 <tiles:insertAttribute name="asset_yjb"></tiles:insertAttribute>
 
 <style>
