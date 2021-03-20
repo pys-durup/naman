@@ -9,8 +9,8 @@
                     <li><a class="menuLink" href="#">투어티켓</a></li>
                     <li><a class="menuLink" href="#">게시판</a></li>
                     <li><a class="menuLink link2" href="#">숙소등록</a></li>
-                    <li><a class="menuLink link2" href="#">로그인</a></li>
-                    <li><a class="menuLink link2" href="#">회원가입</a></li>
+                    <li><a class="menuLink link2" href="#"><i class="far fa-user-circle" style="font-size:20px;"></i></a></li>
+
     
                     <div style="clear: both;"></div>              
                 </ul>
