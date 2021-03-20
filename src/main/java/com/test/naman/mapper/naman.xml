@@ -9,6 +9,7 @@
 		select * from vwReservationHotel where customerseq = #{seq}
 	</select>
 
+
 	<select id="restreviewList" resultType="rrdto" parameterType="String">
 		select * from vwRReviewList where contentid = #{contentid} order by writedate desc
 	</select>
@@ -72,3 +73,4 @@
 	</delete>
 	
 </mapper>
+

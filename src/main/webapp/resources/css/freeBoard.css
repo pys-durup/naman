@@ -1,0 +1,45 @@
+    #justline {
+        width: 650px;
+        height: 2.3px;
+        background-color: #c9c9c9;
+        margin-top : 15px;
+        margin-bottom : 20px;
+
+    }
+
+    #boardTop .boardTitle{
+        float: left;
+        margin-right: 20px;
+    }
+
+    #boardTop .boardTitle:hover{
+        cursor: pointer;
+    }
+
+    #freeBoard {
+        width : 1000px;
+        text-align: center;
+    }
+
+    #freeBoard th {
+        text-align: center;
+    } 
+
+    #freeBoard th:first-child {
+        width : 80px;
+    }
+
+    #freeBoard th:nth-child(3) {
+        width : 150px;
+    }
+    #freeBoard th:nth-child(4) {
+        width: 120px;
+    }
+    #freeBoard th:nth-child(5) {
+        width : 80px;
+    }
+    
+    #listContent {
+    	width : 1000px;
+    	margin: 0px auto;
+    }
