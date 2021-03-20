@@ -1,5 +1,26 @@
   @charset "UTF-8";
   
+  
+  
+      #btnfind, #recomendBoard{
+        outline: none;
+        width: 300px;
+        height: 40px;
+        font-size: 18px;
+        background-color: #ff7100;
+        border-radius: 30px;
+    }
+    
+    .boardContainer{
+            width:900px;
+            margin: 0px auto;
+            padding-top: 90px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    
+  
+  
         .container{
             width:1300px;
             margin: 0px auto;
@@ -130,7 +151,7 @@
 		}
 		
 		.reviewTitle{
-		    margin-right: 250px;
+		    margin-right: 400px;
 		    font-size: 3em;
 		}
 		
@@ -276,6 +297,162 @@
 		    margin-top: 5px;
 		}
 		
-		        
-		        
-        
+		
+		.emoji{
+			
+			font-size:30px;
+			color : orange;
+		}
+		
+		.emojitext {
+			color : orange;
+		}
+		 
+		 .reviewScore li span{
+		 	color : #ccc;
+		 }
+		 
+		 
+		 
+		 .reviewcontainer{
+    width: 678px;
+    margin: 101px auto 62px;
+}
+
+.reviewheader{
+   font-size: 30px; 
+}
+.reviewheader small{
+    color : #aaa;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.reviewWrap ul li{
+    
+    float: left;
+    margin-right:10px;
+    cursor:pointer;
+}
+
+.reviewWrap ul {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 450px;
+}
+
+.reviewWrap ul::after{
+    content: "";
+    display: block;
+    clear: both;
+    
+}
+
+.reviewWrite{
+    width: 650px;
+    height: 300px;
+    font-size: 17px;
+    resize: none;
+    border: 1px solid #DDD;
+    outline: none;
+}
+
+#uploadBtn{
+    width: 89px;
+    height: 89px;
+    line-height: 89px;
+    text-align: center;
+    border: 1px dashed #DBDBDB;
+    cursor: pointer;
+    background-color: transparent;
+    outline:none;
+}
+
+.writingPage{
+    margin-top: 20px;
+    margin-left: 350px;
+}
+
+
+.writingCancle{
+    min-width: 140px;
+    min-height: 50px;
+    margin-right: 16px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: 1px solid #7F7F7F;
+    border-radius: 50px;
+    font-size: 16px;
+    color: #7F7F7F;
+    text-align: center;
+    background-color: #FFFFFF;
+    outline:none;
+}
+
+.writingSubmit{
+min-width: 140px;
+min-height: 50px;
+padding-left: 14px;
+padding-right: 14px;
+border: 1px solid #ff7100;
+border-radius: 50px;
+font-size: 16px;
+color: #FFFFFF;
+text-align: center;
+background-color: #ff7100;
+outline:none;
+}
+		 
+.emojiunsel{
+	font-size:30px;
+	color: #DDD;
+}
+
+.emojiunsel span{
+	font-size:16px;
+} 
+
+.selected {
+	
+	font-color :orange;
+	
+}
+ 
+ 
+ .boarderTable{
+ 	margin-top: 20px;
+ }       
+ 
+ 
+ /* 댓글 테이블 */
+.comment {
+	margin-top: 30px;
+}
+.table.comment .comment{
+	padding-left: 15px;
+	display: block;
+}
+table.comment .date{
+	font-size: 11px;
+	float: right;
+	margin-top: 3px;
+}
+.table.comment .delete{
+	font-size: 11px;
+	float: right;
+	margin-top: 3px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+.table.comment .name {
+	font-size: 11px;
+	float: right;
+	margin-top: 3px;
+	margin-right: 5px;
+}
+
+.commentbox {
+	margin: 10px 15px 30px 15px;
+}

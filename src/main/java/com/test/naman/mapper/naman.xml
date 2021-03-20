@@ -5,8 +5,70 @@
 
 <mapper namespace="naman">
 
-	<select id="hotelList" resultType="dto" parameterType="String">
+	<select id="hotelList" resultType="rhdto" parameterType="String">
 		select * from vwReservationHotel where customerseq = #{seq}
 	</select>
 
+	<select id="restreviewList" resultType="rrdto" parameterType="String">
+		select * from vwRReviewList where contentid = #{contentid} order by writedate desc
+	</select>
+	
+	<select id="photoList" resultType="rrdto" parameterType="String">
+		select * from tblReviewphoto where rreviewseq = #{reviewseq}
+	</select>
+	
+	<select id="reviewCount" resultType="Integer" parameterType="String">
+		select count(*) as count from vwRReviewList where contentid = #{contentid}
+	</select>
+	
+	<select id="reviewGood" resultType="Integer" parameterType="String">
+		select count(*) as count from vwRReviewList where score='5' and contentid = #{contentid}
+	</select>
+	<select id="reviewNomal" resultType="Integer" parameterType="String">
+		select count(*) as count from vwRReviewList where  score='3' and contentid = #{contentid}
+	</select>
+	
+	<select id="reviewBad" resultType="Integer" parameterType="String">
+		select count(*) as count from vwRReviewList where score='1' and contentid = #{contentid}
+	</select>
+	
+<!-- 	<insert id="addReview" parameterType="RestaurantReviewDTO">
+		insert into tblrreview (rreviewseq,customerseq,contentid,score,content,writedate) values (rreviewseq.nextVal,#{customerseq},#{contentid},#{score},#{content},sysdate)
+	</insert>
+	<insert id="addPhotoReview" parameterType="RestaurantReviewDTO">
+		insert into tblreviewphoto (reviewphotoseq,rreviewseq,photo) values (reviewphotoseq.nextVal,#{reviewseq},#{upphoto})
+	</insert> -->
+<!-- 	<select id="findReviewSeq" resultType="String" parameterType="Map">
+		select max(rreviewseq) from tblrreview where contentid = #{contentid} and customerseq=#{customerseq} 
+	</select> -->
+	
+	<select id="restBoardList" resultType="rbdto">
+		select * from vwresboardlist order by resrecseq desc
+	</select>
+
+	<select id="restBoardView" resultType="rbdto" parameterType="String">
+		select * from vwresboardlist where resrecseq = #{resrecseq}
+	</select>
+	
+	<insert id="restBoardAdd" parameterType="rbdto">
+		insert into tblResRecommend (resrecseq, customerseq, title, content, writedate) values (resrecseq.nextVal,#{customerseq},#{title},#{content},sysdate)
+	</insert>
+	
+	<update id="restBoardEdit" parameterType="rbdto">
+		update tblResRecommend set title = #{title}, content = #{content} , writedate = sysdate where resrecseq = #{resrecseq}
+	</update>
+	
+	<delete id="restBoardDel" parameterType="String">
+		delete from tblResRecommend where resrecseq = #{resrecseq}
+	</delete>
+	<select id="restCommentList" resultType="rbdto" parameterType="String">
+		select * from vwresreccomment where resrecseq = #{resrecseq}
+	</select>
+	<insert id="restCommentAdd" parameterType="rbdto">
+		insert into tblResRecommendComment (resRecCommentseq, resrecseq, customerseq, content, writedate) values (resRecCommentseq.nextVal,#{resrecseq},#{customerseq},#{content},sysdate)
+	</insert>
+	<delete id="restCommentDel" parameterType="String">
+		delete from tblResRecommendComment where resreccommentseq = #{resreccommentseq}
+	</delete>
+	
 </mapper>

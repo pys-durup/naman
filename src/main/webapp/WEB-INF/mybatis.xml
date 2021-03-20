@@ -3,8 +3,15 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+
+
  	<typeAliases>
-		<typeAlias type="com.test.naman.rest.ReservationHotelDTO" alias="dto"/>
+		<typeAlias type="com.test.naman.rest.ReservationHotelDTO" alias="rhdto"/>
+		<typeAlias type="com.test.naman.rest.RestaurantReviewDTO" alias="rrdto"/>
+		<typeAlias type="com.test.naman.rest.RestBoardDTO" alias="rbdto"/>
+		<typeAlias type="com.test.naman.rest.RestCommentDTO" alias="rcdto"/>
 	</typeAliases>
+	
+	
 	
 </configuration>
