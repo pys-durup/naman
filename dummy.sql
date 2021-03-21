@@ -20,9 +20,9 @@ insert into tblCustomer(customerSeq, name, email, pw, phone, gender, card, cType
 
 --tblHotel
 
-insert into tblHotel (hotelSeq, customerSeq, hotelCategorySeq, name, webAddress, address, tel, grade, closed, checkin, checkout, mapx, mapy) values (hotelSeq.nextVal, 7, 1, '파라다이스호텔 부산', 'https://www.busanparadisehotel.co.kr/', '부산광역시 해운대구 중동 해운대해변로 296', '0517422121', '5', '0', '15:00', '11:00','129.16467676926845','35.160274121233016');
-insert into tblHotel (hotelSeq, customerSeq, hotelCategorySeq, name, webAddress, address, tel, grade, closed, checkin, checkout, mapx, mapy) values (hotelSeq.nextVal, 7, 1, '라마다 전주호텔', 'wyndhamhotels.com/ko-kr/ramada/jeonju-si-south-korea/ramada-jeonju', '전라북도 전주시 완산구 고사동 팔달로 227', '024161204', '3', '0', '15:00', '11:00','127.144807133698','35.82246471822277');
-insert into tblHotel (hotelSeq, customerSeq, hotelCategorySeq, name, webAddress, address, tel, grade, closed, checkin, checkout, mapx, mapy) values (hotelSeq.nextVal, 7, 1, '롯데호텔 서울', 'wyndhamhotels.com/ko-kr/ramada/jeonju-si-south-korea/ramada-jeonju', '서울특별시 중구 을지로1가 을지로 30','027711000','5', '0', '15:00', '11:00','126.98092805341204','37.56552758432713');
+insert into tblHotel (hotelSeq, customerSeq, hotelCategorySeq, name, webAddress, address, tel, grade, mapx, mapy, closed, checkin, checkout) values (hotelSeq.nextVal, 7, 1, '파라다이스호텔 부산', 'https://www.busanparadisehotel.co.kr/', '부산광역시 해운대구 중동 해운대해변로 296', '0517422121', '5', '129.16467676926845','35.160274121233016' ,'0', '15:00', '11:00');
+insert into tblHotel (hotelSeq, customerSeq, hotelCategorySeq, name, webAddress, address, tel, grade, mapx, mapy, closed, checkin, checkout) values (hotelSeq.nextVal, 7, 1, '라마다 전주호텔', 'wyndhamhotels.com/ko-kr/ramada/jeonju-si-south-korea/ramada-jeonju', '전라북도 전주시 완산구 고사동 팔달로 227', '024161204', '3', '0','127.144807133698','35.82246471822277', '15:00', '11:00');
+insert into tblHotel (hotelSeq, customerSeq, hotelCategorySeq, name, webAddress, address, tel, grade, mapx, mapy, closed, checkin, checkout) values (hotelSeq.nextVal, 7, 1, '롯데호텔 서울', 'wyndhamhotels.com/ko-kr/ramada/jeonju-si-south-korea/ramada-jeonju', '서울특별시 중구 을지로1가 을지로 30','027711000','5', '126.98092805341204','37.56552758432713','0', '15:00', '11:00');
 
 --tblRoom
 insert into tblRoom(roomSeq, hotelSeq, roomCategory, amount, state, person, closed) values (roomSeq.nextVal,1, '스탠다드 트윈 (Standard Twin)', '42000', '0', '2', '0');
@@ -31,7 +31,7 @@ insert into tblRoom(roomSeq, hotelSeq, roomCategory, amount, state, person, clos
 
 
 
---예약목록
+--tblhotelReserve
 insert into tblHotelReserve(hotelReserveSeq, roomSeq, CustomerSeq, reserveDate, checkin, checkout, person, state) values (hotelReserveSeq.nextVal, 1, 1, sysdate, '2021-04-10', '2021-04-15', 2, 1);
 insert into tblHotelReserve(hotelReserveSeq, roomSeq, CustomerSeq, reserveDate, checkin, checkout, person, state) values (hotelReserveSeq.nextVal, 2, 1, sysdate, '2021-04-15', '2021-04-18', 2, 1);
 insert into tblHotelReserve(hotelReserveSeq, roomSeq, CustomerSeq, reserveDate, checkin, checkout, person, state) values (hotelReserveSeq.nextVal, 3, 1, sysdate, '2021-04-18', '2021-04-19', 2, 1);
@@ -69,21 +69,7 @@ insert into tblResRecommend (resrecseq, customerseq, title, content, writedate) 
 insert into tblResRecommend (resrecseq, customerseq, title, content, writedate) values (resrecseq.nextVal, 3,'통영 맛집 추천해주세요~~', '통영갈건데 충무김밥이랑 꿀빵 먹을거에요 맛있는데 추천해 주세요! 또 횟집도 괜찮은데 어디 있을까요?? 시장으로 가야할까요?? ',sysdate);
 insert into tblResRecommend (resrecseq, customerseq, title, content, writedate) values (resrecseq.nextVal, 4,'마라탕 맛집 추천합니다 !!  ', '수원 마라탕 맛집 추천합니다 진짜 맛있어요 ! 광교에 황오루 라는 마라탕 집이에요 ! 꼭 가보세요 후회안합니다..',sysdate);
 
-commit;
-    select * from tblresrecommend;
-    select * from vwresboardlist;
-    create or replace view vwresboardlist
-    as
-    select r.resrecseq as resrecseq, c.customerseq as customerseq, c.name as name, c.email as email, r.title as title, r.content as content, r.writedate as writedate from tblcustomer c
-        inner join tblresrecommend r
-            on c.customerseq = r.customerseq;
-            
-            commit;
 
-CREATE TABLE tblResRecommend (
-	resRecSeq NUMBER PRIMARY KEY, /* 맛집추천게시판번호 */
-	customerSeq NUMBER references tblcustomer(customerSeq), /* 회원번호 */
-	title VARCHAR2(100), /* 제목 */
-	content VARCHAR2(4000), /* 내용 */
-	writeDate DATE /* 날짜 */
-);
+insert into tblResRecommendComment (resRecCommentseq, resrecseq, customerseq, content, writedate) values (resreccommentseq.nextVal, 7,5,'오 저도 통영가는데!! 충무김밥은 명가충무김밥 유명합니다',sysdate);
+insert into tblResRecommendComment (resRecCommentseq, resrecseq, customerseq, content, writedate) values (resreccommentseq.nextVal, 7,6,'꿀빵은 오미사 꿀빵이 유명해요 !! ',sysdate);
+commit;
