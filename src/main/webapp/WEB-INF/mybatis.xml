@@ -3,13 +3,21 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+
+
  	<typeAliases>
- 		<!-- 조혜승 -->
-		<typeAlias type="com.test.naman.rest.ReservationHotelDTO" alias="dto"/>
-		
+    
+     <!-- 조혜승 -->
+		<typeAlias type="com.test.naman.rest.ReservationHotelDTO" alias="rhdto"/>
+		<typeAlias type="com.test.naman.rest.RestaurantReviewDTO" alias="rrdto"/>
+		<typeAlias type="com.test.naman.rest.RestBoardDTO" alias="rbdto"/>
+		<typeAlias type="com.test.naman.rest.RestCommentDTO" alias="rcdto"/>
+
 		<!-- 윤지봉 -->
 		<typeAlias type="com.test.naman.SearchHotelDTO" alias="sdto"/>
 		<typeAlias type="com.test.naman.free.BoardDTO" alias="bdto"/>
+
 	</typeAliases>
 	
+
 </configuration>

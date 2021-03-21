@@ -12,6 +12,8 @@
 		board.view
 		member.auth
 	 -->
+
+
 	 
 	 <!-- 조혜승 -->
 	<definition name="rest.*" template="/WEB-INF/views/layout/main.jsp">

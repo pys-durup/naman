@@ -339,13 +339,9 @@ CREATE TABLE tblRes (
 
 create sequence resSeq;
 
-CREATE TABLE tblRestaurant (
-    restaurantSeq NUMBER PRIMARY KEY, /* 식당번호 */
-    restId VARCHAR2(10)
-);
 
 
-create sequence restaurantSeq;
+
 /* 여행일정게시판 */
 CREATE TABLE tblTripBoard (
 	tripBoardSeq NUMBER PRIMARY KEY, /* 게시글번호 */
@@ -422,8 +418,8 @@ create sequence hotelReserveSeq;
 /* 식당리뷰 */
 CREATE TABLE tblRReview (
 	rReviewSeq NUMBER PRIMARY KEY, /* 리뷰번호 */
-	restaurantSeq NUMBER NOT NULL references tblRestaurant(restaurantSeq), /* 식당번호 */
 	customerSeq NUMBER references tblcustomer(customerSeq), /* 회원번호 */
+    contentid varchar2(15),  /*식당 고유번호 */
 	score NUMBER NOT NULL, /* 평점 */
 	content VARCHAR2(4000), /* 내용 */
 	writeDate DATE NOT NULL /* 작성일 */

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
     <section class="container"> 
       <div id="reservationListWrap" style="">
         <div class="title">숙소 예약 목록</div>
@@ -11,7 +11,7 @@
                 <ul class="info">
                     <li>${dto.hotelname}</li>
                     <li class="address">${dto.address}</li>
-                    <li>${dto.checkin} ~ ${dto.checkout} </li>
+                    <li>${fn:substring(dto.checkin,0,10)} ~ ${fn:substring(dto.checkout,0,10)} </li>
                 </ul>
                 <input class="mapx" type="hidden" value="${dto.mapx}">
                 <input class="mapy" type="hidden" value="${dto.mapy}">
@@ -49,6 +49,9 @@
 	$(".reservationList").click(function(){
 		 var mapx = $(this).children(".mapx").val();
 		var mapy = $(this).children(".mapy").val();
+		
+		$(this).css("color","blue");
+		$(this).siblings().css("color","black");
 		
 			//alert($(this).children(".mapx").val() +','+$(this).children(".mapy").val());
  		//location.href="/naman/rest/myrest.action?mapx="+mapx+"&mapy="+mapy;

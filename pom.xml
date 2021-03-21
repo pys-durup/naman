@@ -176,12 +176,21 @@
 		    <artifactId>json-simple</artifactId>
 		    <version>1.1.1</version>
 		</dependency>
-		
+				
+				<!-- Spring FileUpload -->
 		<dependency>
 		    <groupId>commons-io</groupId>
 		    <artifactId>commons-io</artifactId>
 		    <version>2.6</version>
-		</dependency>    
+		</dependency>   
+
+		
+		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>1.2.2</version> <!-- 1.2.2 쌤은 이렇게하심 나는1.4-->
+		</dependency> 
 		
 		<dependency>
             <groupId>xpp3</groupId>

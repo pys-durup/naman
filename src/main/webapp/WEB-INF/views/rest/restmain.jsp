@@ -9,6 +9,7 @@
       <p class="title">맛있는 음식 먹으며 여행하자! </p>
       <h1 class="title">나만여행 맛집</h1>
       <p class="title"> <button class="btn btn-primary" id="btnfind"><sapn>GO 나의 숙소 근처 맛집</sapn></button></p>
+       <p class="title"> <button class="btn btn-primary" id="recomendBoard"><sapn>맛집 추천 게시판</sapn></button></p>
        
 
       <p class="options">

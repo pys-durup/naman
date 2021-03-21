@@ -8,17 +8,14 @@ $(function(){
 		
 	});
 
+	
+	$("#recomendBoard").click(function(){
+		
+		location.href="/naman/rest/list.action"
+		
+	});
 
 
-
-//음식점 목록 가져오기
-
-//		var mapx = "126.981106";
-//		var mapy = "37.568477";
-//		
-//	
-//	
-//		}); 
 
 //특정 식당 선택시 contentid를 넘겨줌. 
 	$(document).on("click", ".restitle",function(event){	
@@ -27,8 +24,34 @@ $(function(){
 
 		});
 	
-	
 
+	
+//리뷰쓰기 버튼선택시 색상변경 및 스코어 넣기
+	$("#good").click(function(){
+		
+		$(this).css("color","orange");
+		$("#normal").css("color","#DDD");
+		$("#bad").css("color","#DDD");
+		
+	});
+	
+	$("#normal").click(function(){
+		
+		$(this).css("color","orange");
+		$("#good").css("color","#DDD");
+		$("#bad").css("color","#DDD");
+		
+	});
+	$("#bad").click(function(){
+		
+		$(this).css("color","orange");
+		$("#good").css("color","#DDD");
+		$("#normal").css("color","#DDD");
+		
+	});
+	
+	
+	
 });
 
 

@@ -24,16 +24,18 @@
                     <header class="resInfoHeader">
                         <h1 class="restName" id="restName"><span>4.5</span></h1>
                         <div class="btnsRW" >
-                            <button class="btn btn-default"><i class="far fa-heart wanticon"></i>리뷰</button>
-                            <button class="btn btn-default"><i class="far fa-heart wanticon"></i>찜</button>
+                            <button id="goWriteReview" class="btn btn-default"><i class="far fa-edit"></i>리뷰쓰기</button>
+                            <button class="btn btn-default"><i class="far fa-heart wanticon"></i> 찜</button>
                         </div>
                         <div style="clear: both;"></div>
 
                         <div class="RWcnt">
-                            <span>리뷰</span>
-                            <span>찜수</span>
+                            <span><i class="fas fa-pencil-alt"></i> ${total}<c:if test="${empty total}">0</c:if></span>
+                            <span><i class="fas fa-heart"></i> 5</span>
                         </div>
                     </header>
+
+
                     <div class="restInfoDetail">
                         <table class="table table-bordered restTbl" id="restInfoDetail">
                             <tr>
@@ -72,9 +74,7 @@
 							<tr>
 								<th>주차가능여부</th>
 								<td id="restParking"></td>
-							</tr>
-
-                            
+							</tr>  
                           
                         </table>
                           <input type="hidden" id="mapx" value="">
@@ -84,37 +84,49 @@
                 <section class="reviewList">
                     <header class="reviewListHeader"> 
                         <ul class="reviewScore">
-                            <li class="reviewTitle">리뷰<span>(count)</span></li>
-                            <li><button class="btn btn-default">전체<span>(count)</span></button></li>
-                            <li><button class="btn btn-default">맛있다<span>(count)</span></button></li>
-                            <li><button class="btn btn-default">괜찮다<span>(count)</span></button></li>
-                            <li><button class="btn btn-default">별로<span>(count)</span></button></li>
+
+                            <li class="reviewTitle">리뷰</li>
+                            
+                            
+                            <li><button class="btn btn-default">전체<span>(${total}<c:if test="${empty total}">0</c:if>)</span></button></li>
+                            <li><button class="btn btn-default"><i class="far fa-laugh-beam emoji"></i><p class="emojitext">맛있다</p><span>(${good}<c:if test="${empty good}">0</c:if>)</span></button></li>
+                            <li><button class="btn btn-default"><i class="far fa-meh emoji"></i><p class="emojitext">보통</p><span>(${nomal}<c:if test="${empty nomal}">0</c:if>)</span></button></li>
+                            <li><button class="btn btn-default"><i class="far fa-frown emoji"></i><p class="emojitext">별로</p><span>(${bad}<c:if test="${empty bad}">0</c:if>)</span></button></li>
                         </ul>
  
                     </header>
 
                     <div class="reviewView">
+                    <c:forEach items="${list}" var="dto">
                         <div class="reviewWriter">
-                            <p>dkdkdk</p>
-                            <p>2020/03/02</p>
-                            <p class="reviewContent" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, hic repellendus. Similique quam cum quasi labore accusantium consequuntur iure obcaecati, eius consequatur lias, tempora officia, maiores fuga, cumque aperiam natus unde neque iure amet? Quasi laboriosam vitae necessitatibus!</p>
+                            <p>${dto.name}</p>
+                            <p>${dto.writedate}</p>
+                            <p class="reviewContent" >${dto.content}</p>
                             <ul class="pictureList">
+                				<c:forEach items="${dto.photo}" var="url">
                                 <li class="pictureItem">
                                 <button class="pictureButton">
-                                    <img class="pictureLoaded" alt="review picture" src="https://mp-seoul-image-production-s3.mangoplate.com/141411/1544822_1614390367492_14633?fit=around|120:120&amp;crop=120:120;*,*&amp;output-format=jpg&amp;output-quality=80" >
-                                    
+                                    <img class="pictureLoaded" alt="review picture" src="/naman/resources/img/rest/fish.png" >                  
                                 </button>
                                 </li>
-                                <li class="pictureItem">
-                                    <button class="pictureButton">
-                                    <img class="pictureLoaded" alt="review picture" src="" >
-                                    
-                                    </button>
-                                </li>
+                                </c:forEach>
+                                <c:if test="${empty dto.photo}">
+                                
+                                </c:if>
                             </ul>
                         </div>
-                        <div class="reviewIcon">맛있따</div>
+                        <c:if test="${dto.score==5}">
+                        <div class="reviewIcon"><i class="far fa-laugh-beam emoji"></i><p class="emojitext">맛있다</p></div>
+                      
+                        </c:if>
+                        <c:if test="${dto.score==3}">
+                        <div class="reviewIcon"><i class="far fa-meh emoji"></i><p class="emojitext">보통</p></div>
+                        </c:if>
+                        <c:if test="${dto.score==1}">
+                        <div class="reviewIcon"><i class="far fa-frown emoji"></i><p class="emojitext">별로</p></div>
+                        </c:if>
                         <div style="clear: both;"></div>
+                       </c:forEach>
                     </div>
                 </section>
             </div>
@@ -122,37 +134,8 @@
             <div class="infoRightMenu" >
                     <div class="map" id="map" style="margin-bottom: 80px;"></div>
                     <section class="NearByRestaurantList" id="NearByRestaurantList">
-                        <span class="NearByRestaurantList__Title">주변 인기 식당</span>
-            
-                       <!--  <ul class="NearByRestaurantList__List">
-                            <li class="NearByRestaurantItem NearByRestaurantList__Item">
-                            <div class="NearByRestaurantItem__PictureAndContent">
-                                    <a class="NearByRestaurantItem__PictureLink" href="">
-                                    <img class="NearByRestaurantItem__Picture loaded" alt="near by popular restaurant picture" src="https://mp-seoul-image-production-s3.mangoplate.com/141410_1428726363957?fit=around|383:383&amp;crop=383:383;*,*&amp;output-format=jpg&amp;output-quality=80">
-                                    </a>
-                
-                                <div class="NearByRestaurantItem__Content">
-                                    <div class="NearByRestaurantItem__NameWrap">
-                                        <a class="NearByRestaurantItem__Name" href="">1.5닭갈비</a>
-                                        <span class="NearByRestaurantItem__Rating">4.0</span>
-                                    </div>
+                        <span class="NearByRestaurantList__Title">주변 식당</span>
 
-                            
-                                    <div class="NearByRestaurantItem__InfoWrap">
-                                        <dl class="NearByRestaurantItem__Info">
-                                        <dt class="NearByRestaurantItem__InfoLabel">음식 종류</dt>
-                                        <dd class="NearByRestaurantItem__InfoValue NearByRestaurantItem__InfoValue--SubCuisine">닭 / 오리 요리</dd>
-                                        </dl>                    
-                                        <dl class="NearByRestaurantItem__Info">
-                                        <dt class="NearByRestaurantItem__InfoLabel">위치</dt>
-                                        <dd class="NearByRestaurantItem__InfoValue NearByRestaurantItem__InfoValue--Metro">강원 춘천시</dd>
-                                        </dl>
-
-                                    </div>
-                                </div>
-                            </div>
-                            </li>
-                        </ul> -->
 
                     </section>
             </div>
@@ -164,7 +147,13 @@
     </section> 
     
     <script>
-    
+  //특정식당 리뷰쓰러가기
+    $("#goWriteReview").click(function(){
+    	
+    	
+    	location.href="/naman/rest/reviewwrite.action?title="+ $("#restName").text() +"&contentid=" + ${contentid}; 
+    	
+    });
 	
  	//특정식당 사진가져오기
 	 $.ajax({          
@@ -271,46 +260,7 @@
 					 if(myItem.packing!= undefined){
 						 restParking.innerText = myItem.packing;	
 					 }
-/* 		    	   var list = document.getElementById("restInfoDetail");
-		    	   
-		    	   var output='';
-		    	   
-		    	   if(myItem.opentimefood!=undefined){
-			    	   output+='<tr><th>영업시간</th>'
-			    	   output+='<td id="restOpenTime">'+ myItem.opentimefood +'</td></tr>'
-		    	   }
-		    	   if(myItem.restdatefood!=undefined){
-			    	   output+='<tr><th>휴무일</th>'
-			    	   output+='<td id="restBreak">'+ myItem.restdatefood +'</td></tr>'
-		    	   }
-		    	   if(myItem.firstmenu!=undefined){
-			    	   output+='<tr><th>메인메뉴</th>'
-			    	   output+='<td id="restMainMenu">'+ myItem.firstmenu +'</td></tr>'
-		    	   }
-		    	   if(myItem.treatmenu!=undefined){
-			    	   output+='<tr><th>취급메뉴</th>'
-			    	   output+='<td id="restMenu">'+ myItem.treatmenu +'</td></tr>'
-		    	   }
-		    	   if(myItem.reservationfood!=undefined){
-			    	   output+='<tr><th>예약안내</th>'
-			    	   output+='<td id="restReserve">'+ myItem.reservationfood +'</td></tr>'
-		    	   }
-		    	   if(myItem.packing!= undefined){
-			    	   output+='<tr><th>주차가능여부</th>'
-				       output+='<td id="restParking">'+ myItem.packing +'</td></tr>'
-			        }
-				
-		    	   
-		    	   list.innerHtml = output;
-  */
-/* 		    	   if(myItem.opentimefood!=undefined){
-		    	  $("#restOpenTime").text = myItem.opentimefood;
-		    	   }
-		    	  $("#restBreak").text = myItem.restdatefood;
-		    	  $("#restMainMenu").text = myItem.firstmenu;
-		    	  $("#restMenu").text = myItem.treatmenu;
-		    	  $("#restReserve").text = myItem.reservationfood;
-		    	  $("#restParking").text = myItem.packing;  */
+
 		      },
 		      error: function(XMLHttpRequest, textStatus, errorThrown){
 		    	  alert("Status:" + textStatus); alert("Error:" + errorThrown);
@@ -331,14 +281,14 @@
 		          var myItem = data.response.body.items.item;
 		         	var list = document.getElementById("NearByRestaurantList");
 		         	
-		         		 for(var i=0; i<=myItem.length; i++){
+		         		 for(var i=0; i<=5; i++){
 		         			 
 		         			var output = '';
 			         		
 		         			output+='<ul class="NearByRestaurantList__List">'
 		         			output+='<li class="NearByRestaurantItem NearByRestaurantList__Item">'
 		         			output+='<div class="NearByRestaurantItem__PictureAndContent">'
-		         			output+='<a class="NearByRestaurantItem__PictureLink" href="">'
+		         			output+='<a class="NearByRestaurantItem__PictureLink" href="/naman/rest/restdetailview.action?contentid='+myItem[i].contentid +'">'
 			         		output+='<input type="hidden" value='+ myItem[i].contentid+'>'
 			         		 if(myItem[i].firstimage != undefined){
 		         				output+='<img class="NearByRestaurantItem__Picture loaded" alt="near by popular restaurant picture" src="'+myItem[i].firstimage +'">'
@@ -348,13 +298,11 @@
 		         			output+='</a>'
 		         			output+='<div class="NearByRestaurantItem__Content">'
 		         			output+='<div class="NearByRestaurantItem__NameWrap">'
-		         			output+='<a class="NearByRestaurantItem__Name" href="">'+myItem[i].title+'</a>'
+		         			output+='<a class="NearByRestaurantItem__Name" href="/naman/rest/restdetailview.action?contentid='+myItem[i].contentid +'">'+myItem[i].title+'</a>'
 		         			output+='<span class="NearByRestaurantItem__Rating">4.0</span>'
 		         			output+='</div>'
 		         			output+='<div class="NearByRestaurantItem__InfoWrap">'
 		         			output+='<dl class="NearByRestaurantItem__Info">'
-		         			output+='<dt class="NearByRestaurantItem__InfoLabel">음식 종류</dt>'
-		         			output+='<dd class="NearByRestaurantItem__InfoValue NearByRestaurantItem__InfoValue--SubCuisine" id="foodtype"></dd>'
 		         			output+='</dl>'
 		         			output+='<dl class="NearByRestaurantItem__Info">'
 		         			output+='<dt class="NearByRestaurantItem__InfoLabel">위치</dt>'
