@@ -102,11 +102,12 @@
                             <p>${dto.name}</p>
                             <p>${dto.writedate}</p>
                             <p class="reviewContent" >${dto.content}</p>
+                            size: ${dto.photo.size()}
                             <ul class="pictureList">
                 				<c:forEach items="${dto.photo}" var="url">
                                 <li class="pictureItem">
                                 <button class="pictureButton">
-                                    <img class="pictureLoaded" alt="review picture" src="/naman/resources/img/rest/fish.png" >                  
+                                    <img class="pictureLoaded" alt="review picture" src="/naman/resources/img/rest/${url}" >                  
                                 </button>
                                 </li>
                                 </c:forEach>
@@ -334,11 +335,11 @@
 		var container = document.getElementById('map');
 		var options = {
 			center: new kakao.maps.LatLng(mapy.value, mapx.value),
-			level: 3
+			level: 9
 		};
 
 		var map = new kakao.maps.Map(container, options);
-		var markerPosition  = new kakao.maps.LatLng(mapy.value, mapx.value);
+ 		var markerPosition  = new kakao.maps.LatLng(mapy.value, mapx.value);
 		var marker = new kakao.maps.Marker({
 		    position: markerPosition
 		});
@@ -349,16 +350,16 @@
 		var listmapy= document.getElementsByClassName("listmapy");
 		var listtitle = document.getElementsByClassName("NearByRestaurantItem__Name");
 		
-		var postions="";
+		var positions = [];
 			
-			for(var i=0; i<=listtitle.length; i++){
-			 positions = { title: listtitle[i].innerText, latlng : new kakao.maps.LatLng(listmapy[i].value, listmapx[i].value) };
+			for(var i=0; i<listtitle.length; i++){
+			 	positions.push({ title: listtitle[i].innerText, latlng : new kakao.maps.LatLng(listmapy[i].value, listmapx[i].value) });
 				
 			}
+ 
 
 
-
-		// 마커 이미지의 이미지 주소입니다
+ 		// 마커 이미지의 이미지 주소입니다
 		var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
 		    
 		for (var i = 0; i < positions.length; i ++) {
@@ -370,13 +371,19 @@
 		    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
 		    
 		    // 마커를 생성합니다
+		    console.log(positions[i].latlng);
 		    var marker = new kakao.maps.Marker({
 		        map: map, // 마커를 표시할 지도
 		        position: positions[i].latlng, // 마커를 표시할 위치
 		        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
 		        image : markerImage // 마커 이미지 
-		    });
+		    }); 
+		    
 		}
+		
+		
+		
+		
 	</script>
     
 
