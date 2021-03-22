@@ -228,6 +228,9 @@ public class RestaurantController {
 		for (RestaurantReviewDTO dto : list) {
 		
 			List<String> photo = dao.getPhoto(dto.getReviewseq());
+			
+			System.out.println("photo " + photo);
+			
 			dto.setPhoto(photo);
 		}
 		
@@ -249,6 +252,9 @@ public class RestaurantController {
 		req.setAttribute("total", total);
 		req.setAttribute("contentid", contentid);
 		req.setAttribute("list", list);
+		
+		System.out.println("size(): " + list.size());
+		System.out.println(list.get(0).getPhoto());
 		
 		return "rest.restview";
 	}
