@@ -1,0 +1,159 @@
+.searchBack {
+    width: 100%;
+    height: 80px;
+    padding: 15px;
+    background-color: #20274D;
+    margin-top: 85px;
+}
+
+#searchBar {
+    width: 1070px;
+    margin: 0px auto;
+}
+
+#basic-addon1 {
+    background-color: white;
+    border-right: 0px solid transparent;
+}
+
+.searchHotel {
+    width: 350px;
+    height: 50px;
+    float: left;
+    margin-right: 5px;
+}
+
+.searchHotel .glyphicon {
+    width: 20px;
+    font-size: 1.3em;
+}
+
+.searchHotel input {
+    height: 50px;
+    font-size: 1.3em;
+    border-left: 0px solid transparent;
+}
+
+.searchDate {
+    width: 360px;
+    height: 50px;
+    float: left;
+}
+
+.searchDate .glyphicon {
+    width: 25px;
+    font-size: 1.3em;
+}
+
+.searchDate button {
+    height: 50px;
+}
+
+.searchDate #calendarIconIn {
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+.searchDate #calendarDateIn {
+    border-left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+.searchDate #calendarIconOut {
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+.searchDate #calendarDateOut {
+    border-left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+.searchDate #calendarIcon:focus {
+    border: none;
+    outline: none;
+}
+
+.searchDate #calendarDate:focus {
+    border: none;
+    outline: none;
+}
+
+.searchDate .date {
+    font-weight: bold;
+}
+
+.searchDate #dayofweekIn {
+    float: left;
+    color: #888;
+}
+
+.searchDate #dayofweekOut {
+    float: left;
+    color: #888;
+}
+
+.selectBox #sel1 {
+    width: 350px;
+    height: 50px;
+}
+
+.searchPerson {
+    width: 200px;
+    height: 50px;
+}
+
+.searchPerson li {
+    width: 200px;
+    height: 50px;
+}
+
+.searchPerson .glyphicon {
+    float: left;
+    width: 25px;
+    font-size: 1.3em;
+}
+
+.searchHotel {
+    position: relative;
+    display: inline-block;
+}
+
+.searchHotel-items { 
+    position: absolute; 
+    border: 1px solid #d4d4d4;
+    border-bottom: none; 
+    border-top: none; 
+    z-index: 99; 
+    top: 100%; 
+    left: 0; 
+    right: 0; 
+} 
+
+.searchHotel-items div { 
+    padding: 10px; 
+    cursor: pointer; 
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4; 
+} 
+
+.searchHotel-items div:hover { 
+    background-color: #e9e9e9; 
+} 
+
+.searchHotel-active { 
+    background-color: DodgerBlue !important; 
+    color: #ffffff; 
+}
+
+#calendar {
+    position: absolute;
+    left: 36.7%;
+    top: 15.5%;
+    z-index: 1;
+}
+
