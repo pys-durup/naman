@@ -1,0 +1,288 @@
+.overlay {
+	display: none;
+	z-index: 5;
+	position: fixed;
+	width: 100%; height: 100%;
+	left: 0; top: 0;
+	background-color: rgba(0,0,0, 0.4);
+	overflow-x: hidden;
+}
+
+#searchPageLeft {
+    width: 279px;
+    height: auto;
+    overflow: hidden;
+    padding: 0px;
+}
+
+#searchPageRight {
+    width: 837px;
+    height: auto;
+    overflow: hidden;
+    margin-left: 25px;
+    padding: 0px;
+}
+
+.row {
+    padding-top: 25px;
+    width: 1143px;
+    margin: 0px auto;
+}
+
+.map #mapimg {
+    width: 277px;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.map #mapbutton {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 0px;
+    background-color: #EEE;
+    width: 277px;
+    height: 50px;
+    outline: none;
+}
+
+#mapclose {
+    position: fixed;
+    font-size: 2em;
+    color: black;
+    font-weight: bold;
+    left: 84%;
+    top: 14%;
+    z-index: 15;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#mapclose:hover {
+	color: white;
+}
+
+#map {
+    position: fixed;
+    left: 15%;
+    top: 15%;
+    z-index: 10;
+    visibility: hidden;
+}
+
+.filter {
+    margin-top: 30px;
+}
+
+
+.filter h3 {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.filter .reset {
+    float: right;
+    border: 0px;
+    background-color: white;
+    color: #CED4DA;
+    margin-top: 5px;
+    outline: none;
+}
+
+.filter .reset:hover {
+    color: #2B96ED;
+}
+
+.filter .filterunder {
+    font-size: 1.3em;
+}
+
+.filter .filterunit {
+    margin-top: 5px;
+    margin-left: 1px;
+    color: #848C94;
+}
+
+.filter .slider-horizontal {
+    width: 250px;
+}
+
+.filter .slider .slider-track {
+    width: 100%;
+    height: 5px;
+    margin-left: 10px;
+}
+
+.filter .slider-handle {
+    width: 15px;
+    height: 15px;
+    background-image: none;
+    background-color: #0075FF;
+}
+
+.filter .slider-selection {
+    background-image: none;
+    background-color: #0075FF;
+    background-color: #0075FF;
+    height: 1px;
+}
+
+.filter #grade-slider-color .slider-selection {
+    background-color: transparent;
+}
+
+.filter #grade-slider-color .slider-track-high {
+    background-color: #0075FF;
+}
+
+.filter .tooltip {
+    display: none;
+}
+
+.filter .filterunder {
+    font-size: 1.3em;
+}
+
+.filter .filterunit {
+    margin-top: 5px;
+    margin-left: 1px;
+    color: #848C94;
+}
+
+#facilites ul {
+    padding: 0px;
+}
+
+#facilites li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+#facilites li .facilites-btn {
+    text-align: left;
+    background-color: white;
+    border: 1px solid #CED4DA;
+    width: 250px;
+    height: 40px;
+    border-radius: 25px;
+}
+
+#facilites li .facilites-btn:hover {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%);
+    color: #495056;
+}
+
+#facilites li .facilites-btn:focus {
+    outline: none;
+    background-color: #51ABF3;
+    color: white;
+    font-weight: bold;
+}
+
+#classification .checkbox input {
+    width: 20px;
+    height: 20px;
+}
+
+#classification .checkbox label {
+    width: 258px;
+    height: 32px;
+    font-size: 14px;
+}
+
+#hotellist .hotelone {
+    border: 1px solid #CED4DA;
+    width: 790px;
+    height: 200px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#hotellist .hotelimage {
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+#hotellist .hotelimage img {
+    width: 200px;
+    height: 198px;
+}
+
+#hotellist .hotelinfo {
+    width: 350px;
+    height: 170px;
+    border-right: 1px solid #CED4DA;
+    float: left;
+    margin: 15px;
+}
+
+#hotellist .hotelinfo .hotelname {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #444;
+}
+
+#hotellist .hotelinfo .hotellength {
+    margin-top: 3px;
+    font-size: 1em;
+    color: #777;
+}
+
+#hotellist .hotelinfo .hotelgrade {
+    width: 30px;
+    height: 30px;
+    background-color: #003580;
+    border-radius: 5px;
+    padding: 3px;
+    color: white;
+    font-weight: bold;
+    border: 1px solid transparent;
+    text-align: center;
+    margin-top: 85px;
+    float: left;
+}
+
+#hotellist .hotelinfo .hotelreview {
+    float: left;
+    margin-left: 10px;
+    margin-top: 90px;
+    font-size: 1.2em;
+    color: #777;
+}
+
+#hotellist .hotelitem {
+    float: left;
+    width: 170px;
+    height: 170px;
+    margin: 15px;
+}
+
+#hotellist .hotelitem .hotelclassification {
+    float: right;
+    width: auto;
+    height: 30px;
+    text-align: center;
+    padding: 3px;
+    font-size: 1em;
+    border: 1px solid #0075FF;
+    border-radius: 4px;
+    background-color: #0075FF;
+    color: white;
+    font-weight: bold;
+}
+
+#hotellist .hotelitem .hotelnight {
+    float:left;
+    margin-left: 143px;
+    margin-top: 85px;
+    font-size: 1.1em;
+}
+
+#hotellist .hotelitem .hotelprice {
+    float:left;
+    margin-left: 80px;
+    font-weight: bold;
+    font-size: 1.5em;
+}

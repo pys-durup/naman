@@ -16,6 +16,9 @@
 		<!-- 윤지봉 -->
 		<typeAlias type="com.test.naman.SearchHotelDTO" alias="sdto"/>
 		<typeAlias type="com.test.naman.free.BoardDTO" alias="bdto"/>
+		
+	<!-- 김영범 -->
+	<typeAlias type="com.test.naman.hotel.HotelDTO" alias="hdto" />
 
 	</typeAliases>
 	

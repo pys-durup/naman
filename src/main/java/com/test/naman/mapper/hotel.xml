@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="hotel">
+	
+	<select id="hotelsList" resultType="hdto">
+		select * from tblHotel order by hotelSeq asc
+	</select>
+	
+	<select id="hotelGrade" resultType="hdto">
+		select DISTINCT
+		    h.hotelSeq,
+		    avg(hrv.grade) as hotelGrade,
+		    count(hrv.hotelReviewSeq) as reviewCnt
+		from tblHotel h
+		    INNER JOIN tblusingRoom ur
+		    ON h.hotelSeq = ur.hotelSeq
+		        INNER JOIN tblHotelReserve hrs
+		        ON ur.usingRoomSeq = hrs.usingRoomSeq
+		            INNER JOIN tblHotelReview hrv
+            		ON hrs.hotelReserveSeq = hrv.hotelReserveSeq group by h.hotelSeq
+	</select>
+	
+	<select id="hotelItem" resultType="hdto">
+		select DISTINCT
+		    h.hotelSeq,
+		    h.name,
+		    h.hotelcategoryseq,
+		    min(r.amount) as amount
+		from tblHotel h
+		    INNER JOIN tblusingRoom ur
+		    ON h.hotelSeq = ur.hotelSeq
+		        INNER JOIN tblRoom r
+	        		ON r.roomSeq = ur.roomSeq group by h.hotelSeq, h.name, h.hotelcategoryseq order by h.hotelSeq asc
+	</select>
+	
+	<select id="hotelInfo" parameterType="String" resultType="hdto">
+		select * from tblHotel where hotelSeq = #{hotelSeq}
+	</select>
+	
+	<select id="hotelInfoGrade" parameterType="String" resultType="hdto">
+		select
+		    h.hotelSeq,
+		    avg(hrv.grade) as hotelGrade,
+		    count(hrv.hotelReviewSeq) as reviewCnt
+		from tblHotel h
+		    INNER JOIN tblusingRoom ur
+		    ON h.hotelSeq = ur.hotelSeq
+		        INNER JOIN tblHotelReserve hrs
+		        ON ur.usingRoomSeq = hrs.usingRoomSeq
+		            INNER JOIN tblHotelReview hrv
+		            ON hrs.hotelReserveSeq = hrv.hotelReserveSeq where h.hotelSeq = #{hotelSeq} group by h.hotelSeq
+	</select>
+	
+	<select id="hotelInfoRoom" parameterType="String" resultType="hdto">
+		select DISTINCT
+		    h.hotelSeq,
+		    h.name,
+		    r.roomCategory,
+		    r.amount as amount
+		from tblHotel h
+		    INNER JOIN tblusingRoom ur
+		    ON h.hotelSeq = ur.hotelSeq
+		        INNER JOIN tblRoom r
+		        ON r.roomSeq = ur.roomSeq where h.hotelSeq = #{hotelSeq}
+	</select>
+	
+	<select id="hotelInfoService" parameterType="String" resultType="hdto">
+		select  
+		    h.hotelSeq,
+		    us.usingServiceSeq,
+		    s.name as serviceName
+		from tblHotel h
+		    INNER JOIN tblUsingService us
+		    ON h.hotelSeq = us.hotelSeq
+		        INNER JOIN tblService s
+		        ON us.serviceSeq = s.serviceSeq where h.hotelSeq = #{hotelSeq}
+	</select>
+	
+	<select id="hotelInfoPic" parameterType="String" resultType="hdto">
+		select * from tblPic where hotelSeq = #{hotelSeq}
+	</select>
+	
+	<select id="hotelInfoReview" parameterType="String" resultType="hdto">
+		select 
+		    h.hotelSeq,
+		    r.roomcategory,
+		    hrs.checkin,
+		    hrv.title,
+		    hrv.content,
+		    hrv.regdate,
+		    hrv.grade
+		from tblHotel h
+		    INNER JOIN tblUsingRoom ur
+		    ON h.hotelSeq = ur.hotelSeq
+		        INNER JOIN tblRoom r
+		        ON ur.roomSeq = r.roomSeq
+		            INNER JOIN tblHotelReserve hrs
+		            ON hrs.usingRoomSeq = ur.usingRoomSeq
+		                INNER JOIN tblHotelReview hrv
+		                ON hrs.hotelReserveSeq = hrv.hotelReserveSeq where h.hotelSeq = #{hotelSeq}
+	</select>
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
