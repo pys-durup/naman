@@ -1,0 +1,75 @@
+/* 현황 */
+
+main {
+	width: 1610px;
+}
+
+
+section {
+	margin: 50px 0px 0px 40px;
+}
+
+section #status {
+	width: 1100px;
+	/* height: ; */
+	background-color: white;
+	margin-bottom: 40px;
+}
+
+section #status #date {
+	width: 230px;
+	font-size: 1.6em;
+	padding: 20px;
+	margin: 0px auto;
+}
+
+section #status #list {
+	width: 520px;
+	margin: 0px auto;
+}
+
+section #status .each {
+	width: 130px;
+	float: left;
+	padding-bottom: 30px;
+	text-align: center;
+}
+
+section #status::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+section #status .each div:first-child {
+	font-size: 2em;
+	font-weight: bold;
+}
+
+
+/* 차트 */
+#charts {
+	/* border: 1px solid red; */
+	width: 1100px;
+}
+
+#charts::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#charts div:first-child {
+	margin-right: 50px;
+}
+
+.chart {
+	width: 525px;
+	float: left;
+	/* margin: 22px; */
+}
+
+
+
+
+
