@@ -14,8 +14,8 @@
 		select * from vwRReviewList where contentid = #{contentid} order by writedate desc
 	</select>
 	
-	<select id="photoList" resultType="rrdto" parameterType="String">
-		select * from tblReviewphoto where rreviewseq = #{reviewseq}
+	<select id="photoList" resultType="String" parameterType="String">
+		select photo from tblReviewphoto where rreviewseq = #{reviewseq}
 	</select>
 	
 	<select id="reviewCount" resultType="Integer" parameterType="String">
