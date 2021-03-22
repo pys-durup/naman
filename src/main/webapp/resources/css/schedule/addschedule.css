@@ -75,7 +75,7 @@
 
 
 /* 헤더 *********************************************************************/
-#headerContainer {
+#scheduleHeaderContainer {
     width: 100%;
     height: 60px;
     border: 2px solid #ccc;
@@ -84,7 +84,7 @@
 
 
 
-#headerContainer .headerLeft {
+#scheduleHeaderContainer .headerLeft {
     float: left;
     margin-top: 10px;
     margin-left: 20px;
@@ -93,14 +93,14 @@
 
 }
 
-#headerContainer .headerRight {
+#scheduleHeaderContainer .headerRight {
     float: right;
     margin-right: 20px;
     margin-top: 10px;
     font-size: 1.4em;
 }
 
-#headerContainer::after {
+#scheduleHeaderContainer::after {
     content: '';
     clear: both;
     display: block;

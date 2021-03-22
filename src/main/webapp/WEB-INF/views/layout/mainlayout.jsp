@@ -11,7 +11,7 @@
 
 	<tiles:insertAttribute name="asset"></tiles:insertAttribute>	
 	<link href="/naman/resources/css<tiles:getAsString name="includecss"/>.css" rel="stylesheet"/>
-	<tiles:insertAttribute name="kakaomap"></tiles:insertAttribute>
+	<%-- <tiles:insertAttribute name="kakaomap"></tiles:insertAttribute> --%>
 	
 </head>
 <body>

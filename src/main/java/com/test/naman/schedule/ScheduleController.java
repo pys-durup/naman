@@ -86,7 +86,7 @@ public class ScheduleController {
 		request.setAttribute("totalDate", dto.getTotalDate());
 		request.setAttribute("title", dto.getTitle());
 
-		return "addschedule";
+		return "schedule.addschedule";
 	}
 
 	// 여행 스케줄 저장

@@ -394,9 +394,9 @@
 .fix {
     position: fixed;
     /* position: absolute; */
-    top: 10px;
+    top: 80px;
     /* left: 60%; */
-    left: 1076px;
+    left: 1090px;
     z-index:100;
 }
 

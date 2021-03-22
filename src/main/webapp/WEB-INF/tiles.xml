@@ -49,7 +49,7 @@
 	</definition>
 	
 	<!-- 박영수 -->
-		<definition name="addschedule" template="/WEB-INF/views/layout/addschedulelayout.jsp">
+		<definition name="schedule.addschedule" template="/WEB-INF/views/layout/addschedulelayout.jsp">
 		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
 		<put-attribute name="kakaomap" value="/WEB-INF/views/inc/kakaomap.jsp"></put-attribute>
 		<put-attribute name="includecss" value="/schedule/addschedule"></put-attribute> 
