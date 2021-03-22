@@ -1,0 +1,248 @@
+/* 상단 바 */
+
+.wrapper {
+    width: 100%;
+    height: 50px;
+    box-shadow: 0 1px 6px rgb(29 33 41 / 20%);
+    background-color: white;
+    margin-bottom: 20px;
+    overflow: hidden;
+    margin-top: 84px;
+}
+
+.selector {
+    width: 1150px;
+    margin: 0px auto;
+}
+
+.selector .hotelselect {
+    float: left;
+    margin-right: 20px; 
+    padding: 14px;
+    font-size: 1em;
+    cursor: pointer; 
+}
+
+/* 누르면 색깔 */
+.selector .hotelselect:active {
+    color: #488bf8;
+    border-bottom: 4px solid #488bf8;
+}
+
+
+
+/* 호텔이미지 */
+.content {
+    width: 1150px;
+    margin: 0px auto;
+}
+
+.hotelimage .mainimage img {
+    border-radius: 10px;
+    width: 440px;
+    height: 360px;
+    float: left;
+}
+
+.hotelimage .subbigimage img {
+    border-radius: 10px;
+    width: 348px;
+    height: 226px;
+    float: left;
+    margin-left: 6px;
+}
+
+.hotelimage .subsmallimage img {
+    border-radius: 10px;
+    width: 172px;
+    height: 130px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+/* 호텔정보 */
+.hotelinfo {
+    border: 1px solid rgb(221, 223, 226);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.hotelinfo .hotelname {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.hotelinfo .hotellocation {
+    color: #333;
+}
+
+.hotelinfo .hotelgrade {
+    width: 30px;
+    height: 30px;
+    background-color: #003580;
+    border-radius: 5px;
+    padding: 3px;
+    color: white;
+    font-weight: bold;
+    border: 1px solid transparent;
+    text-align: center;
+    float: right;
+}
+
+.hotelinfo .hotelreview {
+    float: right;
+    font-size: 1.2em;
+    color: #777;
+}
+
+/* 호텔 부가설명 */
+.hoteladditional {
+    margin-top: 20px;
+    border: 1px solid rgb(221, 223, 226);
+    border-radius: 15px;
+    padding: 15px;
+    height: 170px;
+}
+
+.hoteladditional .hotelmap {
+    float: left;
+    width: 235px;
+    border-right: 1px solid rgb(221, 223, 226);
+}
+
+.hoteladditional .hotelmap img {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hoteladditional .hotelservice {
+    float: left;
+    width: 235px;
+    border-right: 1px solid rgb(221, 223, 226);
+    margin-left: 15px;
+}
+
+.hoteladditional .hotelservice div {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.hoteladditional .hotelrestaurant {
+    float: left;
+    width: 235px;
+    border-right: 1px solid rgb(221, 223, 226);
+    margin-left: 15px;
+}
+
+.hoteladditional .hotelrestaurant div {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.hoteladditional .hotelexplation {
+    float: left;
+    width: 235px;
+
+    margin-left: 15px;
+}
+
+.hoteladditional .hotelexplation div {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+/* 객실 */
+.hotelreservation table {
+    margin-top: 20px;
+    border:1px solid rgb(221, 223, 226);
+    height: 295px;
+}
+
+.hotelreservation table {
+    width: 100%;
+}
+
+.hotelreservation .roomname {
+    padding: 15px;
+    font-size: 1.2em;
+    border-bottom: 1px solid rgb(221, 223, 226);
+}
+
+.hotelreservation .roomimage {
+    width: 240px;
+    border-right: 1px solid rgb(221, 223, 226);
+}
+
+.hotelreservation .roomimage img {
+	width: 199px;
+	height: 199px;
+    margin: 20px;
+}
+
+.hotelreservation .roomamount {
+    float: left;
+    margin-left: 20px;
+    margin-top: 190px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.hotelreservation button {
+    position: relative;
+    left: 75%;
+    margin-top: 180px;
+}
+
+.review {
+    width: 100%;
+    border-bottom: 1px solid rgb(221, 223, 226);
+}
+
+.review .reviewinfo {
+    float: left;
+    margin-left: 30px;
+    margin-right: 80px;
+}
+
+.review .reviewinfo .reviewgrade {
+    color: #488bf8;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+.review .reviewinfo .reviewroom {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.review .reviewinfo .reviewreserdate {
+    font-weight: bold;
+}
+
+.review .reviewmain {
+    float: left;
+    border: 1px solid #F5F5F5;
+    background-color: #F5F5F5;
+    width: 950px;
+    height: auto;
+    overflow: hidden;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.review .reviewmain .reviewsubject {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.review .reviewmain .reviewcontent {
+    margin-bottom: 15px;
+}
+
