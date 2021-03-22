@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- naman.xml(Mapper File) - SQL 관리 파일 -->
+ 
+<mapper namespace="rooms">
+	
+	<select id="list" parameterType="String" resultType="com.test.naman.host.rooms.RoomDTO">
+		select * from vwRooms where customerSeq = #{customerSeq} 
+	</select>
+
+	<select id="bed" resultType="String">
+		select bedCategory from tblBed
+	</select>
+
+	<insert id="add" parameterType="com.test.naman.host.rooms.RoomDTO" useGeneratedKeys="true" keyProperty="roomSeq" keyColumn="roomSeq">
+		insert into tblRoom(roomSeq, hotelSeq, roomCategory, amount, state, person, closed) values (roomSeq.nextVal, #{hotelSeq}, #{roomCategory}, #{amount}, 0, #{person}, 0)
+	</insert>
+
+	<insert id="addbed" parameterType="com.test.naman.host.rooms.BedDTO">
+		insert into tblBedList(bedListSeq, roomSeq, bedSeq) values (bedListSeq.nextVal, #{roomSeq}, #{bedSeq})
+	</insert>
+	
+	<delete id="delRoom" parameterType="String" statementType="CALLABLE">	
+		{ call delRoom( #{roomSeq} ) }
+	</delete>
+
+	<select id="getRoom" parameterType="String" resultType="com.test.naman.host.rooms.RoomDTO">
+		select * from tblRoom where roomSeq = #{seq}
+	</select>
+	
+	<select id="getBedList" parameterType="String" resultType="com.test.naman.host.rooms.BedDTO">
+		select * from tblBedList where roomSeq = #{seq}
+	</select>
+	
+	
+	
+	
+	
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

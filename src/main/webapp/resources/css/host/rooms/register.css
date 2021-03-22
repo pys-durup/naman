@@ -1,0 +1,77 @@
+/* 숙소 등록 */
+
+main {
+	width: 1610px;
+}
+
+
+section {
+	/* background-color: white; */
+	/* width: 800px; */
+	/* padding: 40px 0px 40px 0px; */
+	margin: 40px 0px 0px 50px;
+}
+
+section h1 {
+	font-size: 2em;
+	font-weight: bold;
+	margin-bottom: 55px;
+}
+
+section form {
+	width: 752px;
+	/* margin: 0px auto; */
+	margin-top: 50px;
+	margin-left: 70px;
+	/* margin-right: 0px; */
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+
+/* 입력 */
+.box::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.withFloat {
+	float: left;
+}
+
+.withFloat:first-child {
+	margin-right: 50px;
+}
+
+.subbox {
+	margin-bottom: 25px;
+}
+
+.subbox #submit {
+	position: absolute;
+	right: 10px;
+}
+
+#pic {
+	margin-bottom: 10px;
+}
+
+#addPic, #submit {
+	position: absolute;
+	right: 0px;
+	/* bottom: 0px; */
+}
+
+#submit {
+	margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+

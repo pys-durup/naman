@@ -10,7 +10,7 @@
 			<li><a class="menuLink" href="#">투어티켓</a></li>
 			<li><a class="menuLink" href="/naman/free/list.action">게시판</a></li>
 			<c:if test="${h == 'get'}">
-			<li><a class="menuLink link2" href="#">숙소등록</a></li>
+			<li><a class="menuLink link2" href="/naman/host/reservation/booking.action">숙소등록</a></li>
 			</c:if>
 			<li><a class="menuLink link3" href="#"><i
 					class="far fa-user-circle"></i> </a></li>

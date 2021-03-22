@@ -67,8 +67,13 @@
 		<put-attribute name="content" value="/WEB-INF/views/schedule/{1}.jsp"></put-attribute>		
 	</definition>
 	
-	
-	
+	<!-- 정경화 -->
+	<definition name="*.*" template="/WEB-INF/views/host/layout/layout.jsp">
+		<put-attribute name="asset" value="/WEB-INF/views/host/inc/asset.jsp"></put-attribute>
+		<put-attribute name="mainmenu" value="/WEB-INF/views/host/inc/mainmenu.jsp"></put-attribute>
+		<put-attribute name="submenu" value="/WEB-INF/views/host/inc/submenu.jsp"></put-attribute>		
+		<put-attribute name="content" value="/WEB-INF/views/host/{1}/{2}.jsp"></put-attribute>		
+	</definition>
 	
 	
 

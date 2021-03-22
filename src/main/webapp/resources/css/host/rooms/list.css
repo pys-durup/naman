@@ -1,0 +1,58 @@
+/* 테이블 */
+
+main {
+	width: 1300px;
+}
+
+main::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.tbls h1 {
+	font-size: 1.7em;
+}
+
+.tbls {
+	width: 1000px;
+}
+
+section {
+	margin-top: 60px;
+	margin-left: 50px;
+}
+
+#roomInfo, #accomInfo {
+	/* width: 1100px; */
+	background-color: white;
+	margin-bottom: 70px;
+	position: relative;
+	left: 0px;
+	top: -20px;
+}
+
+#roomInfo th, #roomInfo td, #accomInfo th, #accomInfo td {
+	text-align: center;
+	font-family: 'NanumBarunGothic';
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#roomInfo th:nth-child(1), #roomInfo td:nth-child(1) {
+	text-align: left;
+}
+
+.btnRooms {
+	position: absolute;
+	right: 0px;
+	bottom: -40px;
+}
+
+
+
+
+
+
+
+

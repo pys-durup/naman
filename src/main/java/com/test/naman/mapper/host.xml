@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- naman.xml(Mapper File) - SQL 관리 파일 -->
+ 
+<mapper namespace="host">
+
+	<select id="hotelSeq" parameterType="String" resultType="String">
+		select hotelSeq from tblHotel where customerSeq = #{customerSeq}
+	</select>
+
+	<select id="bookinglist" parameterType="HashMap" resultType="com.test.naman.host.reservation.ReservationDTO">
+		select * from (select rv.*, rownum as num from (select * from vwBooking where hotelSeq = (select hotelSeq from tblHotel where customerSeq = #{customerSeq}) order by reserveDate desc) rv) where num between #{begin} and #{end}
+	</select>
+	
+	<select id="sbookinglist" parameterType="HashMap" resultType="com.test.naman.host.reservation.ReservationDTO">
+		select * from (select rv.*, rownum as num from (select * from vwBooking where hotelSeq = (select hotelSeq from tblHotel where customerSeq = #{customerSeq}) and ${colname} between to_date(#{sdate}, 'yyyy-mm-dd') and to_date(#{edate}, 'yyyy-mm-dd')
+			order by reserveDate desc) rv) where num between #{begin} and #{end}
+	</select>
+
+	<insert id="registerok" parameterType="com.test.naman.host.HotelDTO">
+		insert into tblHotel (hotelSeq, customerSeq, hotelCategorySeq, name, webAddress, address, tel, grade, closed, checkin, checkout) values (hotelSeq.nextVal, #{customerSeq}, #{hotelCategorySeq}, #{name}, #{webAddress}, #{address}, #{tel}, 5, '0', #{checkin}, #{checkout})
+	</insert>
+
+	<insert id="registerPic" parameterType="com.test.naman.host.PicDTO">
+		insert into tblPic (picSeq, hotelSeq, filename) values (picSeq.nextVal, #{hotelSeq}, #{filename})
+	</insert>
+
+	<select id="getHotel" parameterType="String" resultType="com.test.naman.host.HotelDTO">
+		select * from tblHotel where hotelSeq = #{hotelSeq}
+	</select>
+	
+	<select id="getHotelbyc" parameterType="String" resultType="com.test.naman.host.HotelDTO">
+		select * from tblHotel where customerSeq = #{customerSeq}
+	</select>
+
+	<select id="getCnt" parameterType="HashMap" resultType="Integer">
+		select count(*) from vwBooking where hotelSeq = (select hotelSeq from tblHotel where customerSeq = #{customerSeq})
+	</select>
+	
+	
+	<update id="edit">
+		update tblHotel set hotelCategorySeq = #{hotelCategorySeq},
+							name = #{name},
+							webAddress = #{webAddress},
+							address = #{address},
+							tel = #{tel},
+							checkin = #{checkin},
+							checkout = #{checkout}
+			where customerSeq = #{customerSeq}
+	</update>
+
+	<!-- 중간에서 연결 작업 -->
+	<resultMap type="com.test.naman.host.statistics.StatisticsDTO" id="mymap">
+		<result property="checkin" column="checkin"></result>
+		<result property="checkout" column="checkout"></result>
+		<result property="booking" column="booking"></result>
+		<result property="rcancel" column="rcancel"></result>
+	</resultMap>
+
+
+	<select id="getstatus" parameterType="com.test.naman.host.statistics.StatisticsDTO" resultType="com.test.naman.host.statistics.StatisticsDTO" statementType="CALLABLE">
+		{
+			call getStatus(#{hotelSeq}, #{today}
+							, #{checkin, mode=OUT, jdbcType=VARCHAR, javaType=STRING, resultMap=mymap}
+							, #{checkout, mode=OUT, jdbcType=VARCHAR, javaType=STRING, resultMap=mymap}
+							, #{booking, mode=OUT, jdbcType=VARCHAR, javaType=STRING, resultMap=mymap}
+							, #{rcancel, mode=OUT, jdbcType=VARCHAR, javaType=STRING, resultMap=mymap})
+		}
+	</select>
+	
+	<resultMap type="com.test.naman.host.statistics.SalesDTO" id="salesmap">
+		<result property="sales" column="sales"></result>
+	</resultMap>
+	
+	
+	<select id="getsales" parameterType="HashMap" resultType="com.test.naman.host.statistics.SalesDTO" statementType="CALLABLE">
+	{
+		call getSales(#{hotelSeq}, #{year}
+						, #{sales, mode=OUT, jdbcType=CURSOR, javaType=ResultSet, resultMap=salesmap})
+	}
+	</select>
+	
+	
+	<resultMap type="com.test.naman.host.statistics.CapacityDTO" id="capmap">
+		<result property="cap" column="cap"></result>
+		<result property="roomCategory" column="roomCategory"></result>
+	</resultMap>
+	
+	
+	<select id="getrCap" parameterType="HashMap" resultType="com.test.naman.host.statistics.CapacityDTO" statementType="CALLABLE">
+	{
+		call getrCap(#{hotelSeq}, #{year}
+						, #{result, mode=OUT, jdbcType=CURSOR, javaType=ResultSet, resultMap=capmap})
+
+	}
+	</select>
+	
+	<select id="getTotal" parameterType="HashMap" resultType="Integer">
+		<![CDATA[ select count(*) from vwBooking where hotelseq = #{hotelSeq} and sysdate <= to_date(checkin, 'yyyy-mm-dd') and substr(checkout, 1, 4) = #{year} and state <> '취소' ]]>
+		<!-- 
+		<![CDATA[ 쿼리 내용 ]]>
+		select count(*) from vwBooking where hotelseq = #{hotelSeq} and sysdate <= to_date(checkin, 'yyyy-mm-dd') and substr(checkout, 1, 4) = #{year} and state <![CDATA[ <> ]]> '취소'
+	 	-->
+	</select>
+
+
+
+ 
+</mapper>
+

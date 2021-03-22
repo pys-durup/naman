@@ -1,0 +1,165 @@
+/*기본*/
+@font-face {
+	font-family: 'Jal_Onuel';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NanumBarunGothic';
+	font-style: normal;
+	font-weight: 300;
+	src:
+		url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+	src:
+		url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix')
+		format('embedded-opentype'),
+		url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff')
+		format('woff'),
+		url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf')
+		format('truetype');
+}
+
+@font-face {
+	font-family: 'BBTreeGB';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+	em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+	b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+	details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+	output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body, p, div, span, ul, li, dl, dt, dd, table, th, td, a, blockquote,
+	input, textarea, fieldset, h1, h2, h3, h4, h5, h6, small, strong, b, i,
+	em {
+	font-family: 'BBTreeGB';
+	/* color: #555555; */
+	/* line-height: 1.5em; */
+	/* font-size: 15px; */
+}
+
+html {
+	background-color: #EEEEEE;
+}
+
+html>body {
+	overflow-y: scroll;
+	height: 100%;
+	background-color: #EEEEEE;
+}
+
+div {
+	padding: 0;
+}
+
+/* 서브 메뉴 */
+main {
+	font-family: 'Jal_Onuel';
+	width: 100%;
+}
+
+#headerContainer {
+	background-color: #283339;
+	width: 230px;
+	min-height: 1100px;
+	float: left;
+	font-size: 15px;;
+}
+
+main section {
+	/* width: 950px; */
+	float: left;
+}
+
+#headerContainer #menuList {
+	color: white;
+	font-size: 1.5em;
+	list-style: none;
+}
+
+#headerContainer #menuList li:first-child {
+	padding-top: 70px;
+}
+
+#headerContainer #menuList li {
+	padding: 20px 30px 5px 30px;
+}
+
+#headerContainer #menuList li a {
+	color: white;
+	text-decoration: none;
+}
+
+main #title {
+	background-color: white;
+	width: 950px;
+	height: 70px;
+	float: left;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+main #title::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+
+
+/* 상단 메뉴 */
+#mainNav {
+	font-family: 'Jal_Onuel';
+	height: 72px;
+	background-color: white;
+	/* border: 1px solid red;  */
+	width: 100%;
+	margin-left: 230px;
+	padding: 25px;
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+
+#mainNav ul {
+	list-style: none;
+	//text-align: right;
+	position: absolute;
+	right: 20px;
+	top: 25px;
+}
+
+#mainNav ul li {
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#mainNav ul li a {
+	font-family: 'Jal_Onuel';
+	text-decoration: none;
+	cursor: pointer;
+	color: black;
+}
+
+#mainNav ul li:first-child {
+/* 	font-size: 20px;
+	font-weight: bold; */
+}
+
+

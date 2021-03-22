@@ -1,0 +1,111 @@
+/* 예약 현황 */
+
+main {
+	width: 1610px;
+}
+
+section {
+	/* border: 1px solid red; */
+	width: 1130px;
+	min-height: 200px;
+	background-color: white;
+	padding: 30px;
+	margin: 50px 0px 0px 60px;
+}
+
+section h1 {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+#booking {
+	background-color: white;
+	float: left;
+}
+
+#booking #list {
+	width: 1050px;
+	height: 400px;
+}
+
+#booking #list tr:first-child {
+	height: 40px;
+	background-color: lightgrey;
+}
+
+#booking #list td:last-child select {
+	/* width: 120px; */
+	height: 30px;
+	/* margin-top: 0px; */
+}
+
+#booking #list th, #booking #list td {
+	font-family: 'NanumBarunGothic';
+	font-size: 14px;
+	text-align: center;
+}
+
+#booking #list td {
+	line-height: 25px;
+}
+
+#result {
+	font-size: 16px;
+	margin-top: 20px;
+}
+
+#outerBox {
+	/* width: 1100px; */
+	background-color: white;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	margin-top: 7px;
+}
+
+#outerBox::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#pagnation {
+	text-align: center;
+}
+
+#search {
+	/* display: none; */
+	list-style: none;
+}
+
+#btnSearch {
+	font-family: 'NanumBarunGothic';
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+#searchDate ul li label {
+	width: 70px;
+	margin-bottom: 20px;
+}
+
+#search>li input {
+	font-family: 'NanumBarunGothic';
+}
+
+#checkinStart, #checkoutStart {
+	margin-right: 10px;
+}
+
+#btnCheckin, #btnCheckout {
+	margin-left: 10px;
+}
+
+
+
+
+
+
+
