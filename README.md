@@ -33,7 +33,7 @@
     </tr>
 </table>
 
-<hr>
+
 
 ## 목적
 여행 관련 정보, 예약을 한곳에서 할 수 있는 사이트를 만든다
@@ -68,52 +68,53 @@
  
 - 여행일정을 수정, 삭제 가능하다
 
-### 메인 페이지
+## 담당 업무 동작 화면
+### 1. 메인 페이지
 <img src="images/main.png" width="70%" height="70%"/>
 
-### 여행 기본정보 입력
+### 2. 여행 기본정보 입력
 <img src="images/1_basic.gif" width="70%"/>
 
-### 여행 일정정보 - DAY 추가삭제
+### 3. 여행 일정정보 - DAY 추가삭제
 좌측에 있는 DAY 추가, 삭제 가능  
 <img src="images/2_addDay.gif" width="70%"/>
 
-### 여행 일정정보 - 검색
+### 4. 여행 일정정보 - 검색
 여행 지역, 시군구, 테마별 검색 가능  
 <img src="images/3_search.gif" width="70%"/>
 
-### 여행 일정정보 - 마커, 여행지정보
+### 5. 여행 일정정보 - 마커, 여행지정보
 검색 결과 클릭시 지도에 마커 생성, 오버레이로 해당 관광지 이름 표시  
 정보보기 클릭시 관광지 정보를 확인 가능  
 <img src="images/4_markerInfo.gif" width="70%"/>
 
-### 여행 일정정보 - 일정추가
+### 6. 여행 일정정보 - 일정추가
 일정추가 버튼 또는 드래그로 일정에 추가할 수 있다  
 지도에 순서마커로 표시된다 마커는 테마별로 모양이 다르다  
 일정목록의 아이템을 삭제할 수 있다  
 <img src="images/5_addSchedule.gif" width="70%"/>
 
-### 여행 일정정보 - 커스텀 오버레이
+### 7. 여행 일정정보 - 커스텀 오버레이
 일정 추가한 마커를 누르면 커스텀 오버레이가 표시된다  
 <img src="images/6_customOverlay.gif" width="70%"/>
 
-### 여행 일정정보 - 순서변경
+### 8. 여행 일정정보 - 순서변경
 좌측 일정목록의 순서를 드래그앤 드롭으로 바꿀 수 있다  
 <img src="images/7_changeList.gif" width="70%"/>
 
-### 여행 일정정보 - DAY별 일정추가  
+### 9. 여행 일정정보 - DAY별 일정추가  
 <img src="images/8_otherDay.gif" width="70%"/>
 
-### 여행일정 상세 페이지
+### 10. 여행일정 상세 페이지
 스크롤이 위치할때 지도의 마커가 바뀐다   
 좌측 사이드 네비게이션을 통해 DAY를 이동할 수 있다  
 여행지의 정보를 볼 수 있다  
 <img src="images/9_scheduleDetail.gif" width="70%"/>
 
-### 여행일정 수정
+### 11. 여행일정 수정
 <img src="images/10_editSchedule.gif" width="70%"/>
 
-### 여행일정 삭제
+### 12. 여행일정 삭제
 <img src="images/11_delSchedule.gif" width="70%"/>
 
 ## 후기
