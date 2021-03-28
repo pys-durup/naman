@@ -70,14 +70,14 @@
 
 ## 담당 업무 동작 화면
 ### 1. 메인 페이지
-<img src="images/main.png" width="70%" height="70%"/>
+<img src="images/main.png" width="70%" height="70%" />
 
 ### 2. 여행 기본정보 입력
 <img src="images/1_basic.gif" width="70%"/>
 
 ### 3. 여행 일정정보 - DAY 추가삭제
 좌측에 있는 DAY 추가, 삭제 가능  
-<img src="images/2_addDay.gif" width="70%"/>
+<img src="images/2_addDay.gif" width="70%" style="margin-top: 10px"/>
 
 ### 4. 여행 일정정보 - 검색
 여행 지역, 시군구, 테마별 검색 가능  
